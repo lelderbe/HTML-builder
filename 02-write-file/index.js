@@ -8,7 +8,7 @@ const writeableStream = fs.createWriteStream(
 );
 
 stdin.on('data', (data) => {
-  if (data.toString() === 'exit\n') {
+  if (data.toString().trim() === 'exit') {
     process.exit();
   }
   writeableStream.write(data);
